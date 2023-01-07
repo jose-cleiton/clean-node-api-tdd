@@ -1,17 +1,7 @@
-const express = require('express');
+const SignUpUseCase = require('./SignUpUseCase');
+const AccountRouter = require('./AccountRouter');
 
-const router = express.Router();
+const useCase = new SignUpUseCase();
+const router = new AccountRouter(useCase);
 
-const mongoose = require('mongoose');
-
-const AccountModel = mongoose.model('Acount');
-
-module.exports = () => {
-  router.post('/signup', async (req, res) => {
-    const { email, password, repeatPassword } = req.body;
-    if (password === repeatPassword) {
-      const user = await AccountModel.create({ email, password });
-      return res.json({ user });
-    }
-  });
-};
+app.use('/account', router.router);
