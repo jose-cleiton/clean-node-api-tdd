@@ -1,3 +1,4 @@
+
 class SignUpUseCase {
   sigUp = async (email, password, repeatPassword) => {
     if (password === repeatPassword) {

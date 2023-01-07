@@ -1,4 +1,4 @@
-class Account {
+class SignUp {
   constructor(accountModel) {
     this._accountModel = accountModel;
   }
@@ -8,6 +8,6 @@ class Account {
   }
 }
 
-export default Account;
+export default SignUp;
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
